@@ -1,8 +1,10 @@
+from recs.ops import router as ops_router
 from fastapi import FastAPI, HTTPException
 
 from recs.recommend import CATALOG, RecError, for_user, popular, rate, recommend
 
 app = FastAPI()
+app.include_router(ops_router, prefix="/v1")
 
 
 def guarded(call, *args):

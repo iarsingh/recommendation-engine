@@ -69,3 +69,7 @@ PYTHONPATH=src uvicorn recs.main:app --reload
 - A user with no ratings gets `strategy: popular`. After one rating they move to `item_based`.
 - Ties on predicted rating are broken by `support`, the total similarity behind the prediction, so a guess backed by one weak neighbour ranks below one backed by a strong neighbour.
 - Ratings live in memory. Restarting the service returns to the seed data.
+
+## Ops plane
+
+Workspaces, tenant isolation, job approval, and audit live under `/v1`. Production apply is refused. See `docs/ARCHITECTURE.md`.
