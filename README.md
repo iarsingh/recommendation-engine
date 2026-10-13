@@ -1,5 +1,12 @@
 # Recommendation Engine
 
+## Overview
+
+A recommendation service over a five-item catalog with two approaches. Content-based recommendations rank items by cosine similarity on fixed feature vectors, while item-based collaborative filtering predicts a user's rating for unrated items from their own ratings, weighted by item similarity across all users. Each pick names a `because` item the user rated 4 or higher, users with no ratings get popular items as a cold-start fallback, and ties are broken by the total similarity behind the prediction.
+
+- **Built with:** Python, Uvicorn, pytest, GitHub Actions
+- **Scope:** Learning lab with ratings held in memory; restarting the service returns to the seed data.
+
 <!-- project-guide:start -->
 ## Project guide
 
